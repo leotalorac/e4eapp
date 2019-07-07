@@ -6,23 +6,10 @@ import {
     GoogleMap,
     Marker,
   } from "react-google-maps";
-import json from "../data/points.json"
+import arr from "../data/points.json"
   
-class Normalmap extends React.Component {    
-    constructor(props){
-        super(props);
-        this.newmarkers = json.map((markert,i) => {
-            let e= <Marker
-                position={{ lat: markert.lat, lng: markert.lng}}
-                key={i}
-            />
-            return e
-          })   
-    }
-     
+class Normalmap extends React.Component {   
     render() {
-        
-        console.log(this.newmarkers)
         const MapWithAMarker = withScriptjs(withGoogleMap(props =>
             <GoogleMap
               defaultZoom={15}
@@ -32,7 +19,11 @@ class Normalmap extends React.Component {
               <Marker
                 position={{ lat: 4.64, lng: -74.091784 }}
               /> 
-              {this.newmarkers}
+              <Marker position={{ "lat":73.3 ,"lng":-4}}/>
+              
+              {arr.map((elemen,id) => {
+                    return(<Marker position={{ lat:elemen["lat"] , lng:elemen["lng"]}} key={id} icon={"http://maps.google.com/mapfiles/ms/icons/blue-dot.png"}/>)
+              })}
             </GoogleMap>
           ));
       return(
