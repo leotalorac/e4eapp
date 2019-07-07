@@ -1,4 +1,5 @@
 import React from "react"
+import {Button} from "react-bootstrap"
 import "../css/map.css"
 import {
     withScriptjs,
@@ -35,6 +36,7 @@ class Normalmap extends React.Component {
                 containerElement={<div className={"map"}/>}
                 mapElement={<div style={{ height: `100%` }} />}
             />
+            <Button className="superboton" onClick={() =>{window.location = "/city"}}>Volver</Button>
         </div>
       );
     }

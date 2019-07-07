@@ -1,5 +1,7 @@
 import React from "react"
+import {Button} from "react-bootstrap"
 import "../css/map.css"
+import Swal from 'sweetalert2'
 import {
     withScriptjs,
     withGoogleMap,
@@ -8,7 +10,25 @@ import {
   } from "react-google-maps";
   
   
-class Mapshow extends React.Component {      
+class Mapshow extends React.Component {    
+    inputalert() {
+      Swal.fire({
+        title: 'Ingresa tu mensaje',
+        input: 'text',
+        showCancelButton: true,
+        inputValidator: (value) => {
+          if (!value) {
+            return 'You need to write something!'
+          }
+        }
+      }).then(() =>{
+        Swal.fire({
+          title: 'Mensaje enviado',
+          type:"success"
+          
+        })
+      })
+    }  
     render() {
         const MapWithAMarker = withScriptjs(withGoogleMap(props =>
             <GoogleMap
@@ -22,6 +42,7 @@ class Mapshow extends React.Component {
               <Marker
                 position={{ lat: 4.65, lng: -74.091784 }}
                 icon={"https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"}
+                onClick={this.inputalert}
               />
             </GoogleMap>
           ));
@@ -34,6 +55,7 @@ class Mapshow extends React.Component {
                 containerElement={<div className={"map"}/>}
                 mapElement={<div style={{ height: `100%` }} />}
             />
+            <Button className="superboton" onClick={() =>{window.location = "/city"}}>Volver</Button>
         </div>
       );
     }
