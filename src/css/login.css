@@ -1,0 +1,17 @@
+.logincontainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logoform{
+    width: 90%;
+}
+.form-login{
+    width: 90%;
+}
+.button-login{
+    width: 90vw;
+}

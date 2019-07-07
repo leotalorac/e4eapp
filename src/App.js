@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./css/main.css"
+/* components */
+import Logo from "./components/logo"
+import Alert from "./components/alert"
+import Mapshow from "./components/mapshow"
+import Login from "./components/login"
+import City from "./components/city"
+import Normalmap from "./components/normalmap"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <Router>
+          <Route path="/" exact component={Logo} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/city" exact component={City} />
+          <Route path="/normalmap" exact component={Normalmap} />
+          <Route path="/alert" exact component={Alert} />
+          <Route path="/map" exact component={Mapshow}/>
+      </Router>
     </div>
   );
 }
 
 export default App;
+

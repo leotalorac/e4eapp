@@ -1,0 +1,12 @@
+.alertcontainer{
+    width: 100%;
+    height: 100%;
+    background-color: #F9AD32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.alertcontainer img{
+    width: 80%;
+}
