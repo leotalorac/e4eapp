@@ -1,6 +1,5 @@
 import React from "react"
 import "../css/city.css"
-import Swal from 'sweetalert2'
 import "react-notifications-component/dist/theme.css";
 class City extends React.Component {
 
