@@ -16,11 +16,6 @@ class Mapshow extends React.Component {
         title: 'Ingresa tu mensaje',
         input: 'text',
         showCancelButton: true,
-        inputValidator: (value) => {
-          if (!value) {
-            return 'You need to write something!'
-          }
-        }
       }).then(() =>{
         Swal.fire({
           title: 'Mensaje enviado',
